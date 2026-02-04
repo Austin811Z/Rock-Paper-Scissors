@@ -20,5 +20,8 @@ function getComputerChoice()
 
     return thro;
 }
-let res = getComputerChoice();
-console.log(res)
+function getHumanChoice()
+{
+    let choice = prompt('Enter Rock/Paper/Scissors: ');
+    return choice;
+}
