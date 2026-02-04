@@ -1,5 +1,8 @@
 console.log('Hello world');
 
+globalThis.humanSCore = 0;
+globalThis.computerScore = 0;
+
 function getComputerChoice()
 {
     let ranV = Math.random();
@@ -25,3 +28,5 @@ function getHumanChoice()
     let choice = prompt('Enter Rock/Paper/Scissors: ');
     return choice;
 }
+let comC = getComputerChoice();
+let humC = getHumanChoice();
