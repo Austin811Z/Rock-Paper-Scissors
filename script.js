@@ -5,14 +5,13 @@ globalThis.computerScore = 0;
 
 function getComputerChoice()
 {
-    let ranV = Math.random();
-    let x = ranV * 10;
+    let x = Math.floor(Math.random()*3) + 1;
     let thro = '';
-    if (x > 0 && x <= 3)
+    if (x == 1)
     {
         thro = 'Rock';
     }
-    else if(x > 3 && x < 7 )
+    else if(x == 2)
     {
         thro = 'Scissors';
     }
@@ -88,11 +87,37 @@ function playRound(comC,humC)
 
 
 }
-const x = getComputerChoice();
-let y = getHumanChoice();
-let comC = x.toLowerCase();
-let humC = y.toLowerCase();
-let play = playRound(comC, humC);
-console.log(play);
-console.log(humanSCore);
-console.log(computerScore);
+
+function playGame()
+{
+    for (let index = 0; index < 5; index++) 
+    {
+        const x = getComputerChoice();
+        let y = getHumanChoice();
+        let comC = x.toLowerCase();
+        let humC = y.toLowerCase();
+        let play = playRound(comC, humC);
+        console.log(play);
+    }
+    console.log('Human score');
+    console.log(humanSCore);
+    console.log('Computer score');
+    console.log(computerScore);
+    let z = humanSCore;
+    let w = computerScore;
+    if (z == w) 
+    {
+         console.log('Game ended in a tie.');
+            
+    } 
+    else if (z > w)
+    {
+        console.log('Human is the winner.');
+    }
+    else
+    {
+        console.log('Computer is the winner');
+        
+    }
+}
+playGame();
